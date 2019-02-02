@@ -1,0 +1,78 @@
+//
+//  PrefixHeader.pch
+//  SecretAlbum
+//
+//  Created by 王雪剑 on 17/11/27.
+//  Copyright © 2017年 zkml－wxj. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Global.h"
+#import "Message.h"
+
+
+#ifdef DEBUG //处于开发阶段
+#define SNLog(...) NSLog(__VA_ARGS__)
+#else  //处于发布阶段
+#define SNLog(...)
+#endif
+#define  KWS(ws) __weak typeof (&*self) ws=self //弱引用
+
+//屏幕的宽度
+#define kSelfWidth  [UIScreen mainScreen].bounds.size.width
+//屏幕的高度
+#define kSelfHeight [UIScreen mainScreen].bounds.size.height
+
+#define kFont(r) (double)([UIScreen mainScreen].bounds.size.width)/1080*(r)
+#define kSize(r) (double)([UIScreen mainScreen].bounds.size.width)/1080*(r)//由px到pt
+
+#define YFColor(r,g,b)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+
+
+//状态栏高度
+#define  kStatusBarHeight      (IS_iPhoneX ? 44.f : 20.f)
+
+//导航栏高度
+#define  kNavigationBarHeight  44.f
+
+//tabar栏的高度
+#define  kTabbarHeight        (IS_iPhoneX ? (49.f+34.f) : 49.f)
+
+// Tabbar safe bottom margin.
+#define  kTabbarSafeBottomMargin        (IS_iPhoneX ? 34.f : 0.f)
+
+// Status bar & navigation bar height.
+#define  kStatusBarAndNavigationBarHeight  (IS_iPhoneX ? 88.f : 64.f)
+
+//判断是否iPhone X
+#define IS_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+
+
+
+#define KC1 @"#03a9f4"
+#define KC2 @"#ff6040"
+#define KC3 @"#3dcc6d"
+#define KC4 @"#ff992b"
+#define KC5 @"#5e9beb"
+#define KC6 @"#63c785"
+#define KC7 @"#333333"
+#define KC8 @"#666666"
+#define KC9 @"#999999"
+#define KC75 @"#75c5f7"
+#define KCC @"#cccccc"
+#define KCE5 @"#e5e5e5"
+#define KCDefault @"#f5f3f0"
+#define KCLineDefault @"#F5F3F3"
+
+
+
+#define KXunFeiAppId @"5b7e7066"
+
+
+
+
+#endif /* PrefixHeader_pch */
